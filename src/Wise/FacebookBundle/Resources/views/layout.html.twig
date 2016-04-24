@@ -1,0 +1,29 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js ie"><![endif]-->
+<!--[if gt IE 9]><html class="no-js"><![endif]-->
+<!--[if !IE]><html class="no-js"><![endif]-->
+  <head>
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link href="img/icons/favicon.ico" rel="shortcut icon">
+    <link href="img/icons/touch.png" rel="apple-touch-icon-precomposed">
+
+    <link rel="stylesheet" href="{{ asset('bundles/wisefacebook/css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/wisefacebook/css/form.css') }}" />
+
+    <!--[if IE]>
+      <script src="{{ asset('bundles/wisefacebook/js/vendor/html5shiv.js') }}"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<h1>Awesome Facebook game</h1>
+
+	{% block content %}
+	{% endblock %}
+
+	<script type="text/javascript" src="{{ asset('bundles/wisefacebook/js/vendor/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/wisefacebook/js/vendor/tweenmax.min.js') }}"></script>
+  </body>
+  </html>

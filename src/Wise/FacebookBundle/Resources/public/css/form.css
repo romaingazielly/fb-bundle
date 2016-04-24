@@ -1,0 +1,28 @@
+/* Formulaire */
+.register { position:relative; width:800px; margin:auto; }
+.register .form { position:relative; width:645px; margin:auto; }
+.register form { position:relative; padding:50px 100px; }
+.register form .row { margin:0 0 10px 0; }
+.register form .civilite { display:inline-block; height:30px; line-height:30px; ; width: 240px;}
+.register form .civilite #user_civilite { padding-top:5px; }
+.register form span { display:inline-block; vertical-align: top; font: 15px "Trebuchet MS"; width:100px; height: 30px; line-height: 30px;}
+.register form input[type="text"], .register form input[type="email"], .register form input[type="number"] { height:30px; line-height:30px; width:240px; border:solid 1px #a8b3bb; padding:0 10px; font:15px "Trebuchet MS"; color:#000b29; }
+.register form #check_conditions { width:auto; height: auto; margin:15px 0 0 0; }
+.register form #check_newsletter { width:auto; height:auto; line-height: initial; margin-bottom:15px;}
+.register form .legend { display:block; font:12px "Trebuchet MS"; margin:20px 0 0 0; width:auto; }
+.register form input.error { border:solid 1px red; }
+.register .form img { position:absolute; bottom:-10px; right:-190px; z-index: 0;}
+#user_codePostal{width:118px;}
+
+/* Checkbox */
+.register .conditions [type="checkbox"] {position:absolute; z-index:-1; opacity:0; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+.register input[type="checkbox"] + label {display:inline-block; background:url('../images/checkbox.png') no-repeat left bottom; padding-left:30px; height:17px; color:inherit;}
+.register input[type="checkbox"]:checked + label {background:url('../images/checkbox.png') no-repeat left top;}
+.register input[type="checkbox"] + label + .error{display:none;}
+
+/* Radio */
+.register form .radio { position:relative;display: inline-block; width: auto; margin: 0 15px 20px; font:15px "Trebuchet MS"; color: #000;}
+.register form .radio.first { margin-left:0; }
+.register [type="radio"] {position:absolute; z-index:-1; opacity:0; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+.register input[type="radio"] + label {display:inline-block; background:url('../images/radio.png') no-repeat left bottom; padding-left:30px; height:17px; color:inherit;padding-top: 2px;}
+.register input[type="radio"]:checked + label {background:url('../images/radio.png') no-repeat left top;}

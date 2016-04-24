@@ -1,0 +1,12 @@
+wise_facebook_quiz:
+    resource: "@WiseFacebookQuizBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+wise_facebook:
+    resource: "@WiseFacebookBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+

@@ -1,0 +1,53 @@
+imports:
+    - { resource: config.yml }
+
+wise_facebook:
+    simulate_facebook: true
+    # end_date: 2014-12-03 11:00
+    app_info:
+        id: 1462830737296615
+        secret: c8ab00951214b342e1b142773022738e
+        permissions: []
+        desktop_url: http://facebookbundle.dev/app_dev.php/
+wise_facebook_quiz:
+    source: config
+    questions:
+        -
+            question: 'What did you say?'
+            answers:
+                - { answer: 'Hello World!', right: true }
+                - { answer: 'Good bye!' }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_dev.yml"
+        strict_requirements: true
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: "%debug_toolbar%"
+    intercept_redirects: "%debug_redirects%"
+
+monolog:
+    handlers:
+        main:
+            type:   stream
+            path:   "%kernel.logs_dir%/%kernel.environment%.log"
+            level:  debug
+        console:
+            type:   console
+            bubble: false
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+assetic:
+    use_controller: "%use_assetic_controller%"
+
+#swiftmailer:
+#    delivery_address: me@example.com

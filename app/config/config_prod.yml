@@ -1,0 +1,43 @@
+imports:
+    - { resource: config.yml }
+
+wise_facebook:
+    simulate_facebook: true
+    # end_date: 2014-12-03 11:00
+    app_info:
+        id: 1462830737296615
+        secret: c8ab00951214b342e1b142773022738e
+        permissions: []
+        desktop_url: http://facebookbundle.dev/app_dev.php/
+wise_facebook_quiz:
+    source: config
+    questions:
+        -
+            question: 'What did you say?'
+            answers:
+                - { answer: 'Hello World!', right: true }
+                - { answer: 'Good bye!' }
+
+
+#framework:
+#    validation:
+#        cache: apc
+
+#doctrine:
+#    orm:
+#        metadata_cache_driver: apc
+#        result_cache_driver: apc
+#        query_cache_driver: apc
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        console:
+            type:  console

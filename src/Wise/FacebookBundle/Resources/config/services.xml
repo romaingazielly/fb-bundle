@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    
+    <services>
+        <service id="wise_facebook.event_listener.configure_facebook_session" class="Wise\FacebookBundle\EventListener\ConfigureFacebookSessionListener">
+            <argument>%wise_facebook_app_id%</argument>
+            <argument>%wise_facebook_app_secret%</argument>
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+        </service>
+
+        <service id="wise_facebook.facebook_authenticator" class="Wise\FacebookBundle\Facebook\FacebookAuthenticator">
+        	<argument type="service" id="session"></argument>
+            <argument>%wise_facebook_app_permissions%</argument>
+            <argument>%wise_facebook_simulate%</argument>
+		</service>
+
+		<service id="wise_facebook.facebook_client" class="Wise\FacebookBundle\Facebook\FacebookClient">
+		</service>
+
+        <service id="wise_facebook.user_manager" class="Wise\FacebookBundle\Entity\UserManager">
+            <argument type="service" id="wise_facebook.facebook_authenticator"></argument>
+        </service>
+    </services>
+    
+</container>

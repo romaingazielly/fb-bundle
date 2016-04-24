@@ -1,0 +1,46 @@
+{% block content %}
+<section class="register">
+    <header>
+        <div class="border">
+            <div class="head-content">
+                <h1>Formulaire</h1>
+            </div>
+        </div>
+    </header>
+    <div class="page-content">
+        <div class="form-intro">
+            <h1>Veuillez remplir ce formulaire</h1>
+        </div>
+        <form method="post" action="{{ path('register') }}" novalidate>
+            <div class="row champs civ ">
+                <span>{% trans %}form.civilite{% endtrans %}* : </span>
+                <div class="radio first">
+                    <input id="civilite_0" name="user[civilite]" required="required" value="mlle" type="radio" >
+                    <label for="civilite_0" class="required">Mlle</label>
+                </div>
+                <div class="radio">
+                    <input id="civilite_1" name="user[civilite]" required="required" value="mme" type="radio">
+                    <label for="civilite_1" class="required">Mme</label>
+                </div>
+                <div class="radio">
+                    <input id="civilite_2" name="user[civilite]" required="required" value="m" type="radio">
+                    <label for="civilite_2" class="required last-child">M</label>
+                </div>
+            </div>
+            <div class="conditions clearfix">
+                <span id="check_conditions">
+                    <label for="user_conditions">
+                        J'accepte le
+                        <a class="reglement-link" href="javascript:;">règlement</a><sup>*</sup>
+                    </label>
+                </span>
+                <span id="check_newsletter">
+                    <label for="user_newsletter">Je m'abonne à la newsletter</label>
+                </span>
+            </div>
+            <button type="submit" class="btn-brown">Valider</button>
+        </form>
+        <span class="legend"><sup>*</sup>Champs requis</span>
+    </div>
+</section>
+{% endblock %}

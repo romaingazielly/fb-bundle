@@ -1,0 +1,13 @@
+<h1>{{question.question }}</h1>
+
+<form action="{{ path('wise_facebook_quiz_question', { number: step+1 }) }}" method="POST">
+	{% for key, answer in question.answers %}
+	    <div class="radio {% if key == 0 %}first{% endif %}">
+            <input type="radio" id="answer_{{ key }}" name="answer" value="{{ key }}" checked />
+            <span class="fakeRadio checked" data-id="answer_a"></span>
+            <label for="answer_{{ key }}">{{ answer.answer }}</label>
+        </div>
+	{% endfor %}
+
+	<input type="submit" value="Validate" />
+</form>
