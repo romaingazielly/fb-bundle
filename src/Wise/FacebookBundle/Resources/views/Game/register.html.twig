@@ -1,3 +1,5 @@
+{% extends 'WiseFacebookBundle::layout.html.twig' %}
+
 {% block content %}
 <section class="register">
     <header>
@@ -11,7 +13,7 @@
         <div class="form-intro">
             <h1>Veuillez remplir ce formulaire</h1>
         </div>
-        <form method="post" action="{{ path('register') }}" novalidate>
+        <form method="post" action="{{ path('jeu_termine') }}" novalidate>
             <div class="row champs civ ">
                 <span>{% trans %}form.civilite{% endtrans %}* : </span>
                 <div class="radio first">
@@ -30,8 +32,7 @@
             <div class="conditions clearfix">
                 <span id="check_conditions">
                     <label for="user_conditions">
-                        J'accepte le
-                        <a class="reglement-link" href="javascript:;">règlement</a><sup>*</sup>
+                        J'accepte le <a class="reglement-link" href="javascript:;">règlement</a><sup>*</sup>
                     </label>
                 </span>
                 <span id="check_newsletter">

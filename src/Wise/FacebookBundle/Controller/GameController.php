@@ -49,9 +49,17 @@ class GameController extends Controller
     /**
      * @Route("/jeu", name="jeu")
      */
-    public function lotsAction()
+    public function jeuAction()
     {
         return $this->render('WiseFacebookBundle:Game:jeu.html.twig', array());
+    }
+
+    /**
+     * @Route("/jeu_termine", name="jeu_termine")
+     */
+    public function jeu_termineAction()
+    {
+        return $this->render('WiseFacebookBundle:Game:jeu_termine.html.twig', array());
     }
 
     /**
